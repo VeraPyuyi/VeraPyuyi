@@ -10,7 +10,7 @@ Run the updater locally with `python3 scripts/update_contributions.py`. `--check
 
 Only public, merged PRs authored by `VeraPyuyi` in repositories owned by others are counted. Search results are paginated and each external PR is checked against its actual PR metadata. Dates are displayed in UTC. Failed requests, incomplete search results, invalid metadata, and marker errors fail the refresh. The previous README stays in place until all network checks and rendering succeed.
 
-`data/contributions.json` is the generated snapshot. Edit `data/contribution-notes.json` to add or revise a short description, keyed by the canonical PR URL. Newly merged PRs appear with their official title, link, and date even when no description has been written yet.
+`data/contributions.json` is the generated snapshot. All PRs appear in a compact three-column table, grouped by project and ordered by the actual merge date. Edit `data/contribution-notes.json` to add or revise a short description, keyed by the canonical PR URL. Descriptions are kept in the collapsed **Contribution notes** section; the section is omitted when no descriptions exist. Newly merged PRs appear with their complete official title, link, and date even when no description has been written yet.
 
 Only the text between `CONTRIBUTIONS:START` and `CONTRIBUTIONS:END` is generated. Keep exactly one pair of these markers. Introduction, links, artwork, personal project, and closing quote stay outside the generated block. A refresh that changes nothing produces no commit. Concurrent pushes fail safely instead of overwriting another edit.
 

@@ -162,22 +162,26 @@ def render_section(contributions: list, notes: dict) -> str:
     for pr in contributions:
         groups[pr['repository']].append(pr)
     repositories = sorted(groups, key=lambda repo: (max(pr['merged_at'] for pr in groups[repo]), repo), reverse=True)
-    lines = [
-        '<p align="center">',
-        f'  <strong>✦ {len(contributions)} merged PRs · {len(groups)} upstream projects ✦</strong>',
-        '</p>',
-    ]
+    lines = [f'**✦ {len(contributions)} merged PRs · {len(groups)} upstream projects ✦**']
     if not contributions:
         lines.extend(['', 'A small collection of contributions, waiting for its first star.'])
+        return '\n'.join(lines)
+    lines.extend(['', '| Project | Merged PR | Merged (UTC) |', '| :--- | :--- | :--- |'])
+    descriptions = []
     for repo in repositories:
-        lines.extend(['', f'### ✧ [{markdown_text(PROJECT_NAMES.get(repo, repo))}](https://github.com/{repo})', ''])
-        for pr in sorted(groups[repo], key=lambda value: (value['merged_at'], value['number']), reverse=True):
-            lines.append(f"- [#{pr['number']} — {markdown_text(pr['title'])}]({pr['url']})")
+        project_name = markdown_text(PROJECT_NAMES.get(repo, repo))
+        project_link = f'[{project_name}](https://github.com/{repo})'
+        for index, pr in enumerate(sorted(groups[repo], key=lambda value: (value['merged_at'], value['number']), reverse=True)):
+            project = project_link if index == 0 else ''
+            date = merged_time(pr['merged_at']).strftime('%Y-%m-%d')
+            lines.append(f"| {project} | [#{pr['number']} — {markdown_text(pr['title'])}]({pr['url']}) | {date} |")
             note = notes.get(pr['url'])
             if note is not None and not isinstance(note, str):
                 raise ValueError('Contribution notes must be plain strings.')
-            description = f'{markdown_text(note)}<br />\n  ' if note else ''
-            lines.extend(['', f"  {description}<sub>Merged {merged_time(pr['merged_at']).strftime('%Y-%m-%d')} (UTC)</sub>", ''])
+            if note and note.strip():
+                descriptions.append(f"- [{project_name} #{pr['number']}]({pr['url']}) — {markdown_text(note)}")
+    if descriptions:
+        lines.extend(['', '<details>', '<summary>Contribution notes</summary>', '', *descriptions, '', '</details>'])
     return '\n'.join(lines).rstrip()
 
 

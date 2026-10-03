@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/profile-banner.png" width="100%" alt="An original blue-and-pink-haired researcher and her star cat work together in a warmly lit research room beneath a starry night sky." />
+  <img src="assets/profile-banner-academy.png" width="100%" alt="A full-body view of the original blue-and-pink-haired adult researcher in a navy collegiate jacket, pink tie, pleated skirt and Mary Jane shoes, standing beside her star cat in a warmly lit nighttime research room." />
 </p>
 
 <h1 align="center">Hi, I’m Pyuyi ✨</h1>
@@ -22,67 +22,37 @@
 Public pull requests authored by me and merged into projects maintained by others.
 
 <!-- CONTRIBUTIONS:START -->
-<p align="center">
-  <strong>✦ 8 merged PRs · 4 upstream projects ✦</strong>
-</p>
+**✦ 8 merged PRs · 4 upstream projects ✦**
 
-### ✧ [Lody](https://github.com/LodyAI/Lody)
+| Project | Merged PR | Merged (UTC) |
+| :--- | :--- | :--- |
+| [Lody](https://github.com/LodyAI/Lody) | [#72 — fix: align the workspace Node runtime floor](https://github.com/LodyAI/Lody/pull/72) | 2026-09-13 |
+| [heym](https://github.com/heymrun/heym) | [#277 — fix: clarify plugin node panel states](https://github.com/heymrun/heym/pull/277) | 2026-07-02 |
+|  | [#276 — fix: make plugin dependency locking cross-platform](https://github.com/heymrun/heym/pull/276) | 2026-07-01 |
+|  | [#275 — docs: add plugin authoring guide](https://github.com/heymrun/heym/pull/275) | 2026-07-01 |
+|  | [#272 — fix: make plugin path safety checks cross-platform](https://github.com/heymrun/heym/pull/272) | 2026-07-01 |
+| [Dify](https://github.com/langgenius/dify) | [#37388 — fix\(api\): prevent plugin provider cache stampedes](https://github.com/langgenius/dify/pull/37388) | 2026-06-30 |
+| [ARIS](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep) | [#242 — Fix Windows PowerShell installer parity](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/pull/242) | 2026-05-26 |
+|  | [#241 — Fix Codex skill mirror inventory drift](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/pull/241) | 2026-05-25 |
 
-- [#72 — fix: align the workspace Node runtime floor](https://github.com/LodyAI/Lody/pull/72)
+<details>
+<summary>Contribution notes</summary>
 
-  Aligns Node runtime requirements with SQLite’s needs and catches incompatible runtimes before installation.<br />
-  <sub>Merged 2026-09-13 (UTC)</sub>
+- [Lody #72](https://github.com/LodyAI/Lody/pull/72) — Aligns Node runtime requirements with SQLite’s needs and catches incompatible runtimes before installation.
+- [heym #277](https://github.com/heymrun/heym/pull/277) — Makes loading, disabled, missing, and error states clearer in the plugin node panel.
+- [heym #276](https://github.com/heymrun/heym/pull/276) — Makes plugin dependency installation locks work across Windows and POSIX systems.
+- [heym #275](https://github.com/heymrun/heym/pull/275) — Documents plugin packages, handlers, dependencies, and runtime trust boundaries for plugin authors.
+- [heym #272](https://github.com/heymrun/heym/pull/272) — Fixes cross-platform path checks while preserving archive and icon traversal protection.
+- [Dify #37388](https://github.com/langgenius/dify/pull/37388) — Prevents concurrent provider-cache misses from overwhelming the plugin daemon with duplicate refreshes.
+- [ARIS #242](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/pull/242) — Brings the Windows PowerShell installer in line with the flat skill layout and managed install lifecycle.
+- [ARIS #241](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/pull/241) — Restores missing Codex skill mirrors and adds checks to catch future inventory drift.
 
-
-### ✧ [heym](https://github.com/heymrun/heym)
-
-- [#277 — fix: clarify plugin node panel states](https://github.com/heymrun/heym/pull/277)
-
-  Makes loading, disabled, missing, and error states clearer in the plugin node panel.<br />
-  <sub>Merged 2026-07-02 (UTC)</sub>
-
-- [#276 — fix: make plugin dependency locking cross-platform](https://github.com/heymrun/heym/pull/276)
-
-  Makes plugin dependency installation locks work across Windows and POSIX systems.<br />
-  <sub>Merged 2026-07-01 (UTC)</sub>
-
-- [#275 — docs: add plugin authoring guide](https://github.com/heymrun/heym/pull/275)
-
-  Documents plugin packages, handlers, dependencies, and runtime trust boundaries for plugin authors.<br />
-  <sub>Merged 2026-07-01 (UTC)</sub>
-
-- [#272 — fix: make plugin path safety checks cross-platform](https://github.com/heymrun/heym/pull/272)
-
-  Fixes cross-platform path checks while preserving archive and icon traversal protection.<br />
-  <sub>Merged 2026-07-01 (UTC)</sub>
-
-
-### ✧ [Dify](https://github.com/langgenius/dify)
-
-- [#37388 — fix\(api\): prevent plugin provider cache stampedes](https://github.com/langgenius/dify/pull/37388)
-
-  Prevents concurrent provider-cache misses from overwhelming the plugin daemon with duplicate refreshes.<br />
-  <sub>Merged 2026-06-30 (UTC)</sub>
-
-
-### ✧ [ARIS](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep)
-
-- [#242 — Fix Windows PowerShell installer parity](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/pull/242)
-
-  Brings the Windows PowerShell installer in line with the flat skill layout and managed install lifecycle.<br />
-  <sub>Merged 2026-05-26 (UTC)</sub>
-
-- [#241 — Fix Codex skill mirror inventory drift](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/pull/241)
-
-  Restores missing Codex skill mirrors and adds checks to catch future inventory drift.<br />
-  <sub>Merged 2026-05-25 (UTC)</sub>
+</details>
 <!-- CONTRIBUTIONS:END -->
 
 ## 🌱 A little project of my own
 
 [**PromptControlLab**](https://github.com/VeraPyuyi/prompt_control_lab) — a local lab for prompt-control experiments, evaluation, and research diagnostics.
-
-More notes, papers, and small discoveries live in [my little universe](https://verapyuyi.github.io/).
 
 ---
 

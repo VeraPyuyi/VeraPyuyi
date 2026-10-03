@@ -125,10 +125,55 @@ class ContributionTests(unittest.TestCase):
         note_url = 'https://github.com/bob/project/pull/2'
         rendered = updater.render_section(result, {note_url: 'A reviewed contribution.'})
         self.assertIn('3 merged PRs · 2 upstream projects', rendered)
-        self.assertLess(rendered.index('### ✧ [bob/project]'), rendered.index('### ✧ [alice/project]'))
+        self.assertLess(rendered.index('[bob/project](https://github.com/bob/project)'),
+                        rendered.index('[alice/project](https://github.com/alice/project)'))
         self.assertLess(rendered.index('[#3'), rendered.index('[#1'))
         self.assertIn('A reviewed contribution.', rendered)
-        self.assertEqual(rendered.count('Merged '), 3)
+        rows = [line for line in rendered.splitlines() if line.startswith('| ')][2:]
+        self.assertEqual(len(rows), 3)
+        self.assertIn('|  | [#1', rows[2])
+        self.assertIn('| 2026-07-01 |', rows[2])
+        self.assertNotIn('### ', rendered)
+
+    def test_all_prs_visible_and_notes_collapsed(self):
+        result = updater.fetch_contributions(FakeAPI([pull_request('alice/project', 1), pull_request('bob/project', 2)]))
+        rendered = updater.render_section(result, {result[0]['url']: 'An optional detailed explanation.'})
+        table, details = rendered.split('<details>', 1)
+        for pr in result:
+            self.assertIn(f"[#{pr['number']} — {pr['title']}]({pr['url']})", table)
+        self.assertNotIn('An optional detailed explanation.', table)
+        self.assertIn('<summary>Contribution notes</summary>', details)
+        self.assertIn('An optional detailed explanation.', details)
+        self.assertNotIn('<details open', rendered)
+        self.assertEqual(rendered.count('<details>'), 1)
+        self.assertEqual(rendered.count('</details>'), 1)
+
+    def test_no_notes_does_not_add_empty_details(self):
+        result = updater.fetch_contributions(FakeAPI([pull_request()]))
+        for notes in [{}, {result[0]['url']: ''}, {result[0]['url']: '  \n  '}]:
+            with self.subTest(notes=notes):
+                rendered = updater.render_section(result, notes)
+                self.assertIn('| Project | Merged PR | Merged (UTC) |', rendered)
+                self.assertNotIn('<details', rendered)
+
+    def test_empty_contributions_has_no_table(self):
+        rendered = updater.render_section([], {})
+        self.assertIn('0 merged PRs · 0 upstream projects', rendered)
+        self.assertNotIn('| Project |', rendered)
+        self.assertNotIn('<details', rendered)
+
+    def test_invalid_note_is_rejected(self):
+        result = updater.fetch_contributions(FakeAPI([pull_request()]))
+        with self.assertRaisesRegex(ValueError, 'plain strings'):
+            updater.render_section(result, {result[0]['url']: 7})
+
+    def test_table_title_and_note_escaping(self):
+        result = updater.fetch_contributions(FakeAPI([pull_request(title='Fix A | B <img> & C\nnext line')]))
+        rendered = updater.render_section(result, {result[0]['url']: '*Note* | <script>\nnext line'})
+        self.assertIn(r'Fix A \| B &lt;img&gt; &amp; C next line', rendered)
+        self.assertIn(r'\*Note\* \| &lt;script&gt; next line', rendered)
+        self.assertNotIn('<img>', rendered)
+        self.assertNotIn('<script>', rendered)
 
     def test_titles_escape_markdown_and_html(self):
         value = '<img> [link](evil) *words* ' + chr(96) + 'code' + chr(96)
