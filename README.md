@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/profile-banner-academy.png" width="100%" alt="A full-body view of the original blue-and-pink-haired adult researcher in a navy collegiate jacket, pink tie, pleated skirt and Mary Jane shoes, standing beside her star cat in a warmly lit nighttime research room." />
+  <img src="assets/profile-banner-witch.png" width="100%" alt="The original petite adult researcher with long blue-and-pink hair, wearing a dark scholarly witch capelet, black tights and small suede ankle boots, standing beside her star-cat in a clear, warmly lit nighttime research room." />
 </p>
 
 <h1 align="center">Hi, I’m Pyuyi ✨</h1>
