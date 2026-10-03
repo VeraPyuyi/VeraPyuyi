@@ -1,0 +1,58 @@
+[
+  {
+    "repository": "LodyAI/Lody",
+    "number": 72,
+    "title": "fix: align the workspace Node runtime floor",
+    "url": "https://github.com/LodyAI/Lody/pull/72",
+    "merged_at": "2026-09-13T06:25:57Z"
+  },
+  {
+    "repository": "heymrun/heym",
+    "number": 277,
+    "title": "fix: clarify plugin node panel states",
+    "url": "https://github.com/heymrun/heym/pull/277",
+    "merged_at": "2026-07-02T06:23:29Z"
+  },
+  {
+    "repository": "heymrun/heym",
+    "number": 276,
+    "title": "fix: make plugin dependency locking cross-platform",
+    "url": "https://github.com/heymrun/heym/pull/276",
+    "merged_at": "2026-07-01T16:17:30Z"
+  },
+  {
+    "repository": "heymrun/heym",
+    "number": 275,
+    "title": "docs: add plugin authoring guide",
+    "url": "https://github.com/heymrun/heym/pull/275",
+    "merged_at": "2026-07-01T15:58:21Z"
+  },
+  {
+    "repository": "heymrun/heym",
+    "number": 272,
+    "title": "fix: make plugin path safety checks cross-platform",
+    "url": "https://github.com/heymrun/heym/pull/272",
+    "merged_at": "2026-07-01T10:02:12Z"
+  },
+  {
+    "repository": "langgenius/dify",
+    "number": 37388,
+    "title": "fix(api): prevent plugin provider cache stampedes",
+    "url": "https://github.com/langgenius/dify/pull/37388",
+    "merged_at": "2026-06-30T10:24:11Z"
+  },
+  {
+    "repository": "wanshuiyin/Auto-claude-code-research-in-sleep",
+    "number": 242,
+    "title": "Fix Windows PowerShell installer parity",
+    "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/pull/242",
+    "merged_at": "2026-05-26T02:20:42Z"
+  },
+  {
+    "repository": "wanshuiyin/Auto-claude-code-research-in-sleep",
+    "number": 241,
+    "title": "Fix Codex skill mirror inventory drift",
+    "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/pull/241",
+    "merged_at": "2026-05-25T07:25:40Z"
+  }
+]

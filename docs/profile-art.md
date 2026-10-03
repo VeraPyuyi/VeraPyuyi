@@ -1,0 +1,12 @@
+# Profile banner
+
+- Final asset: `assets/profile-banner.png`, 2172 × 724, opaque PNG.
+- Generated with the built-in GPT Image tool on 2026-10-03.
+- Character and style reference: the site's original [Monte Carlo cover](https://github.com/VeraPyuyi/VeraPyuyi.github.io/blob/main/public/uploads/blogs/monte-carlo-control-natural-starts/cover.png).
+- Reference role: character identity and anime rendering only; a newly generated scene.
+- Processing: original pixels and dimensions preserved; no lossy recompression.
+- Original characters only, with no third-party anime characters, logos, or watermarks.
+
+## Final prompt
+
+Use case: stylized-concept. Asset type: original GitHub profile README banner, a very wide horizontal panorama approximately 3:1, preferably 2400 x 800 or larger, crisp at desktop display size. Input image 1 is a character-identity and cel-shading style reference only; create a new scene, not an edit or recreation of the cover. Preserve the SAME original adult woman researcher in her twenties: waist-length sapphire-blue hair fading through lavender into cherry-pink, blue-violet eyes, small gold star hairpin, slender natural build and small bust, cream high-collar blouse, powder-blue cardigan and navy pleated skirt. Preserve her original dark navy star-cat with gold star details. Scene: a warm, cozy research room at night, where the researcher is quietly working beside an open laptop and a notebook; on the desk a small luminous branching constellation gently joins into a single star, suggesting thoughtful contributions joining an open-source project. The star-cat sits close by and watches. Anime kawaii aesthetic, clean expressive Japanese 2D line art, polished crisp cel shading, beautifully drawn flowing hair, pastel blue, pink and lavender accents, warm lamp light and cool starlight through the window. Friendly, modest, thoughtful atmosphere. Compose both researcher face and cat clearly within the middle 70 percent of the ultra-wide banner, with balanced uncluttered room details on either side. Keep the illustration readable even when scaled to a GitHub README width. Do not draw any text, letters, numbers, equations, code, interface labels, logos or watermarks. Entirely original characters and scene; no third-party anime or game characters, no photorealism, no 3D, no exaggerated body proportions, no extra duplicate characters. Output a sharp high-resolution opaque image.

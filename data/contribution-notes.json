@@ -1,0 +1,10 @@
+{
+  "https://github.com/LodyAI/Lody/pull/72": "Aligns Node runtime requirements with SQLite’s needs and catches incompatible runtimes before installation.",
+  "https://github.com/heymrun/heym/pull/277": "Makes loading, disabled, missing, and error states clearer in the plugin node panel.",
+  "https://github.com/heymrun/heym/pull/276": "Makes plugin dependency installation locks work across Windows and POSIX systems.",
+  "https://github.com/heymrun/heym/pull/275": "Documents plugin packages, handlers, dependencies, and runtime trust boundaries for plugin authors.",
+  "https://github.com/heymrun/heym/pull/272": "Fixes cross-platform path checks while preserving archive and icon traversal protection.",
+  "https://github.com/langgenius/dify/pull/37388": "Prevents concurrent provider-cache misses from overwhelming the plugin daemon with duplicate refreshes.",
+  "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/pull/242": "Brings the Windows PowerShell installer in line with the flat skill layout and managed install lifecycle.",
+  "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/pull/241": "Restores missing Codex skill mirrors and adds checks to catch future inventory drift."
+}

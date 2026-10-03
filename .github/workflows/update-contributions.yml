@@ -1,0 +1,66 @@
+name: Refresh merged contributions
+
+on:
+  schedule:
+    - cron: '17 2 * * *' # 10:17 Asia/Shanghai
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - README.md
+      - scripts/**
+      - tests/**
+      - data/contribution-notes.json
+      - .github/workflows/update-contributions.yml
+  pull_request:
+    paths:
+      - README.md
+      - scripts/**
+      - tests/**
+      - data/contribution-notes.json
+      - .github/workflows/update-contributions.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: profile-contributions-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Test contribution refresh
+        run: python3 -m unittest discover -s tests -v
+
+  refresh:
+    if: github.event_name != 'pull_request' && github.repository == 'VeraPyuyi/VeraPyuyi' && github.ref == 'refs/heads/main'
+    needs: validate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+      - name: Verify and refresh public merged PRs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 scripts/update_contributions.py
+      - name: Commit only changed contribution data
+        run: |
+          if git diff --quiet -- README.md data/contributions.json; then
+            echo 'No contribution changes to publish.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add README.md data/contributions.json
+          git commit -m 'chore: refresh merged contributions'
+          git push origin HEAD:main
