@@ -50,9 +50,16 @@ Public pull requests authored by me and merged into projects maintained by other
 </details>
 <!-- CONTRIBUTIONS:END -->
 
-## 🌱 A little project of my own
+## 🌱 我的项目
 
-[**PromptControlLab**](https://github.com/VeraPyuyi/prompt_control_lab) — a local lab for prompt-control experiments, evaluation, and research diagnostics.
+| Project | What it does |
+| :--- | :--- |
+| 🧪 [PromptControlLab](https://github.com/VeraPyuyi/prompt_control_lab) | Local prompt evaluation, optimization, and research diagnostics. |
+| 🧭 [fields-study-flow](https://github.com/VeraPyuyi/fields-study-flow) | Traceable AI/CS learning roadmaps, paper study plans, and agent-ready tools. |
+| 🗂️ [Sidebar Organizer](https://github.com/VeraPyuyi/codex-sidebar-organizer) | A lightweight plugin that organizes desktop projects and chats while preserving pins. |
+| 🐟 [想要变成鹰的鱼](https://github.com/VeraPyuyi/fish-wants-to-be-a-bird) | A Chinese WebGAL visual-novel prologue. [Play in your browser](https://verapyuyi.github.io/fish-wants-to-be-a-bird/). |
+| 🌌 [Pyuyi’s Home](https://github.com/VeraPyuyi/VeraPyuyi.github.io) | My Astro home for papers, blogs, photographs, and quiet thoughts. [Visit](https://verapyuyi.github.io/). |
+| ♟️ [SCU-MathModeling-Chessboard](https://github.com/VeraPyuyi/SCU-MathModeling-Chessboard) | MATLAB chessboard-modeling coursework. |
 
 ---
 
